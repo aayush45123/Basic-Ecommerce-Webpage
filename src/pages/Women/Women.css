@@ -1,0 +1,181 @@
+/* Women's Page Styles */
+.women-hero {
+ display: flex;
+ align-items: center;
+ min-height: 500px;
+ background: linear-gradient(135deg, #8B5A3C 0%, #A0522D 50%, #D2691E 100%);
+ padding: 60px 40px;
+ color: white;
+}
+
+.hero-text {
+ flex: 1;
+ max-width: 500px;
+ margin-right: 60px;
+}
+
+.hero-text h1 {
+ font-size: 3.2rem;
+ font-weight: 700;
+ margin-bottom: 20px;
+ line-height: 1.2;
+ color: #ffffff;
+ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text p {
+ font-size: 1.3rem;
+ margin-bottom: 30px;
+ color: #F5F5DC;
+ line-height: 1.6;
+ opacity: 0.95;
+}
+
+.shop-now-btn {
+ background-color: #FF69B4;
+ color: #ffffff;
+ border: none;
+ padding: 14px 28px;
+ font-size: 1.1rem;
+ font-weight: 600;
+ border-radius: 25px;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+ text-transform: uppercase;
+ letter-spacing: 0.5px;
+}
+
+.shop-now-btn:hover {
+ background-color: #FF1493;
+ transform: translateY(-3px);
+ box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+}
+
+.hero-img {
+ flex: 1;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.hero-image {
+ max-width: 400px;
+ width: 100%;
+ height: auto;
+ border-radius: 15px;
+ box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+ transition: transform 0.3s ease;
+ border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-image:hover {
+ transform: scale(1.05) rotate(1deg);
+}
+
+/* Products Section */
+.section-title {
+ padding: 50px 40px 20px;
+ background-color: #FFF8F0;
+}
+
+.section-title h2 {
+ font-size: 2.5rem;
+ color: #8B4513;
+ margin-bottom: 10px;
+ text-align: left;
+ font-weight: 600;
+ position: relative;
+ display: inline-block;
+}
+
+.section-title h2::after {
+ content: '';
+ position: absolute;
+ bottom: -8px;
+ left: 0;
+ width: 100%;
+ height: 4px;
+ background: linear-gradient(90deg, #FF69B4, #FF1493, #DC143C);
+ border-radius: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+ .women-hero {
+   flex-direction: column;
+   text-align: center;
+   padding: 40px 30px;
+ }
+ 
+ .hero-text {
+   margin-right: 0;
+   margin-bottom: 40px;
+ }
+ 
+ .hero-text h1 {
+   font-size: 2.5rem;
+ }
+ 
+ .hero-image {
+   max-width: 300px;
+ }
+}
+
+@media (max-width: 768px) {
+ .women-hero {
+   padding: 30px 20px;
+   min-height: 400px;
+ }
+ 
+ .hero-text h1 {
+   font-size: 2rem;
+ }
+ 
+ .hero-text p {
+   font-size: 1.1rem;
+ }
+ 
+ .section-title {
+   padding: 30px 20px 15px;
+ }
+ 
+ .section-title h2 {
+   font-size: 2rem;
+ }
+}
+
+@media (max-width: 480px) {
+ .hero-text h1 {
+   font-size: 1.8rem;
+ }
+ 
+ .shop-now-btn {
+   padding: 12px 24px;
+   font-size: 1rem;
+ }
+ 
+ .hero-image {
+   max-width: 250px;
+ }
+ 
+ .section-title h2 {
+   font-size: 1.8rem;
+ }
+}
+
+/* Additional feminine touches */
+.women-hero::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+ pointer-events: none;
+}
+
+.women-hero {
+ position: relative;
+}

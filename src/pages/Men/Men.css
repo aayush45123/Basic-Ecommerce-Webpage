@@ -1,0 +1,241 @@
+.men-page {
+ font-family: "Amazon Ember", Arial, sans-serif;
+}
+
+/* Hero Section */
+.men-hero {
+ display: flex;
+ align-items: center;
+ min-height: 500px;
+ background: linear-gradient(135deg, #232f3e 0%, #37475a 100%);
+ padding: 60px 40px;
+ color: white;
+ position: relative;
+ overflow: hidden;
+}
+
+.men-hero::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+ pointer-events: none;
+}
+
+.men-hero-content {
+ flex: 1;
+ max-width: 500px;
+ margin-right: 60px;
+ position: relative;
+ z-index: 2;
+}
+
+.men-hero-content h1 {
+ font-size: 3.2rem;
+ font-weight: 700;
+ margin-bottom: 20px;
+ line-height: 1.2;
+ color: #ffffff;
+ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.men-hero-content p {
+ font-size: 1.3rem;
+ margin-bottom: 30px;
+ color: #cccccc;
+ line-height: 1.5;
+}
+
+.shop-btn {
+ background-color: #ff9900;
+ color: #000000;
+ border: none;
+ padding: 14px 28px;
+ font-size: 1.1rem;
+ font-weight: 600;
+ border-radius: 8px;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ box-shadow: 0 2px 8px rgba(255, 153, 0, 0.3);
+ position: relative;
+ overflow: hidden;
+}
+
+.shop-btn::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: -100%;
+ width: 100%;
+ height: 100%;
+ background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+ transition: left 0.5s;
+}
+
+.shop-btn:hover::before {
+ left: 100%;
+}
+
+.shop-btn:hover {
+ background-color: #e68900;
+ transform: translateY(-2px);
+ box-shadow: 0 4px 12px rgba(255, 153, 0, 0.4);
+}
+
+.men-hero-image {
+ flex: 1;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ position: relative;
+ z-index: 2;
+}
+
+.hero-image {
+ max-width: 400px;
+ width: 100%;
+ height: auto;
+ border-radius: 12px;
+ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+ transition: transform 0.3s ease;
+ border: 2px solid rgba(255, 153, 0, 0.2);
+}
+
+.hero-image:hover {
+ transform: scale(1.05);
+}
+
+/* Products Section */
+.men-products {
+ padding: 50px 40px;
+ background: linear-gradient(135deg, #f3f3f3 0%, #e8e8e8 100%);
+ position: relative;
+}
+
+.men-products::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ height: 3px;
+ background: linear-gradient(90deg, #ff9900, #e68900, #ff9900);
+ background-size: 200% 100%;
+ animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+ 0% { background-position: 0% 50%; }
+ 100% { background-position: 200% 50%; }
+}
+
+.men-products h2 {
+ font-size: 2.2rem;
+ color: #232f3e;
+ margin-bottom: 40px;
+ text-align: left;
+ font-weight: 600;
+ border-bottom: 3px solid #ff9900;
+ padding-bottom: 10px;
+ display: inline-block;
+ position: relative;
+}
+
+.men-products h2::after {
+ content: '';
+ position: absolute;
+ bottom: -6px;
+ left: 0;
+ width: 100%;
+ height: 3px;
+ background: linear-gradient(90deg, #ff9900, #e68900);
+ border-radius: 2px;
+ box-shadow: 0 2px 4px rgba(255, 153, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+ .men-hero {
+   flex-direction: column;
+   text-align: center;
+   padding: 40px 30px;
+ }
+
+ .men-hero-content {
+   margin-right: 0;
+   margin-bottom: 40px;
+ }
+
+ .men-hero-content h1 {
+   font-size: 2.5rem;
+ }
+
+ .hero-image {
+   max-width: 300px;
+ }
+}
+
+@media (max-width: 768px) {
+ .men-hero {
+   padding: 30px 20px;
+ }
+
+ .men-hero-content h1 {
+   font-size: 2rem;
+ }
+
+ .men-hero-content p {
+   font-size: 1.1rem;
+ }
+
+ .men-products {
+   padding: 30px 20px;
+ }
+
+ .men-products h2 {
+   font-size: 1.8rem;
+ }
+}
+
+@media (max-width: 480px) {
+ .men-hero-content h1 {
+   font-size: 1.8rem;
+ }
+
+ .shop-btn {
+   padding: 12px 24px;
+   font-size: 1rem;
+ }
+
+ .hero-image {
+   max-width: 250px;
+ }
+}
+
+/* Additional professional touches */
+.shop-btn:active {
+ transform: translateY(0);
+ box-shadow: 0 2px 4px rgba(255, 153, 0, 0.3);
+}
+
+@keyframes fadeInUp {
+ from {
+   opacity: 0;
+   transform: translateY(30px);
+ }
+ to {
+   opacity: 1;
+   transform: translateY(0);
+ }
+}
+
+.men-hero-content {
+ animation: fadeInUp 0.8s ease-out;
+}
+
+.men-hero-image {
+ animation: fadeInUp 0.8s ease-out 0.2s both;
+}

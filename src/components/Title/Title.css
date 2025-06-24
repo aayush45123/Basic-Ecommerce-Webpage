@@ -1,0 +1,215 @@
+.titleContainer {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 800px;
+  padding: 0 20px;
+  
+  /* Clean Amazon-style design */
+  background: #ffffff;
+  border: 1px solid #e7e7e7;
+  border-radius: 8px;
+  padding: 32px 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.titleSubtitle {
+  font-size: 12px;
+  font-weight: 400;
+  color: #565959;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Amazon Ember", Arial, sans-serif;
+}
+
+.titleHeading {
+  font-size: 28px;
+  font-weight: 400;
+  margin: 0;
+  color: #0F1111;
+  position: relative;
+  display: inline-block;
+  font-family: "Amazon Ember", Arial, sans-serif;
+  line-height: 1.3;
+}
+
+.titleHeading::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #ff9900;
+  margin: 12px auto 0;
+  border-radius: 1px;
+}
+
+/* Alternative Amazon department header style */
+.titleContainer.department {
+  background: #f7f8fa;
+  border: none;
+  border-radius: 0;
+  padding: 24px;
+  margin: 0 0 24px 0;
+  max-width: 100%;
+}
+
+.titleContainer.department .titleSubtitle {
+  color: #007185;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.titleContainer.department .titleHeading {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0F1111;
+}
+
+.titleContainer.department .titleHeading::after {
+  display: none;
+}
+
+/* Amazon carousel header style */
+.titleContainer.carousel {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 16px 0;
+  text-align: left;
+  margin: 0 0 16px 0;
+}
+
+.titleContainer.carousel .titleSubtitle {
+  font-size: 12px;
+  color: #565959;
+  margin-bottom: 4px;
+}
+
+.titleContainer.carousel .titleHeading {
+  font-size: 21px;
+  font-weight: 700;
+  color: #0F1111;
+  text-align: left;
+}
+
+.titleContainer.carousel .titleHeading::after {
+  display: none;
+}
+
+/* Amazon section divider style */
+.titleContainer.section {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 20px 0;
+  border-bottom: 1px solid #e7e7e7;
+  margin: 0 0 20px 0;
+  border-radius: 0;
+}
+
+.titleContainer.section .titleSubtitle {
+  color: #007185;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.titleContainer.section .titleHeading {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0F1111;
+}
+
+.titleContainer.section .titleHeading::after {
+  width: 100%;
+  height: 1px;
+  background: #e7e7e7;
+  margin: 8px auto 0;
+}
+
+@media (max-width: 768px) {
+  .titleContainer {
+    margin: 20px auto;
+    padding: 24px 16px;
+  }
+  
+  .titleHeading {
+    font-size: 24px;
+  }
+
+  .titleSubtitle {
+    font-size: 11px;
+  }
+  
+  .titleContainer.department {
+    padding: 16px;
+  }
+  
+  .titleContainer.department .titleHeading {
+    font-size: 20px;
+  }
+  
+  .titleContainer.carousel .titleHeading {
+    font-size: 18px;
+  }
+  
+  .titleContainer.section .titleHeading {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .titleContainer {
+    margin: 16px auto;
+    padding: 20px 12px;
+  }
+  
+  .titleHeading {
+    font-size: 20px;
+  }
+
+  .titleSubtitle {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+  
+  .titleContainer.department .titleHeading {
+    font-size: 18px;
+  }
+  
+  .titleContainer.carousel .titleHeading {
+    font-size: 16px;
+  }
+  
+  .titleContainer.section .titleHeading {
+    font-size: 16px;
+  }
+}
+
+/* Amazon-style breadcrumb integration */
+.titleContainer.breadcrumb {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 12px 0;
+  text-align: left;
+  margin: 0;
+}
+
+.titleContainer.breadcrumb .titleSubtitle {
+  font-size: 12px;
+  color: #007185;
+  margin-bottom: 8px;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.titleContainer.breadcrumb .titleHeading {
+  font-size: 16px;
+  font-weight: 400;
+  color: #0F1111;
+  text-align: left;
+}
+
+.titleContainer.breadcrumb .titleHeading::after {
+  display: none;
+}
