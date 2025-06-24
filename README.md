@@ -34,7 +34,9 @@ A fully functional E-Commerce website built with **React**, **Vite**, and **Cont
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
+
+```
 ecommerce-app/
 ├── public/
 │   └── favicon.ico
@@ -69,6 +71,9 @@ ecommerce-app/
 ├── package.json
 ├── vite.config.js
 └── README.md
+```
+
+
 
 
 ## 📦 Installation & Setup
