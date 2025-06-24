@@ -131,12 +131,29 @@ npm run dev
 - 💬 Product Reviews
 
 ---
+## 🖼️ Screenshots
 
-## 📸 Screenshots
+### 🏠 Home Page
+![Home Page](public/homepage1.png)
+![More Products](public/homepage2.png)
 
-> _Add screenshots of home, product details, cart, payment page here for better presentation_
+### 🧍‍♂️ Men's Section
+![Men's Page](public/men.png)
 
----
+### 👩 Women's Section
+![Women's Page](public/women.png)
+
+### 👶 Kids' Section
+![Kids' Page](public/kids.png)
+
+### 📄 Product Detail Page
+![Product Detail](public/productdetail.png)
+
+### 🛒 Add to Cart
+![Add to Cart](public/addtocart.png)
+
+### 💳 Buy Now Flow
+![Buy Now](public/buynow.png)
 
 ## 📃 License
 
