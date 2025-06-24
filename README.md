@@ -35,34 +35,41 @@ A fully functional E-Commerce website built with **React**, **Vite**, and **Cont
 ---
 
 ## 📂 Project Structure
+ecommerce-app/
+├── public/
+│   └── favicon.ico
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── Cards/
+│   │   │   ├── Cards.jsx
+│   │   │   └── Cards.css
+│   │   ├── Navbar/
+│   │   │   ├── Navbar.jsx
+│   │   │   └── Navbar.css
+│   │   ├── Hero/
+│   │   ├── Title/
+│   │   ├── Footer/
+│   ├── context/
+│   │   ├── ProductsContext.jsx
+│   │   └── CartContext.jsx
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── Men.jsx
+│   │   ├── Women.jsx
+│   │   ├── Kids.jsx
+│   │   ├── About.jsx
+│   │   ├── ProductDetail.jsx
+│   │   ├── Cart.jsx
+│   │   └── Payment.jsx
+│   ├── App.jsx
+│   ├── main.jsx
+├── .gitignore
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
 
-\`\`\`
-src/
-│
-├── components/
-│   ├── Cards/
-│   ├── Navbar/
-│   ├── Footer/
-│
-├── context/
-│   ├── ProductsContext.js
-│   ├── CartContext.js
-│
-├── pages/
-│   ├── Home.jsx
-│   ├── Men.jsx
-│   ├── Women.jsx
-│   ├── Kids.jsx
-│   ├── About.jsx
-│   ├── ProductDetail.jsx
-│   ├── Cart.jsx
-│   ├── Payment.jsx
-│   ├── ThankYou.jsx
-│
-└── App.jsx
-\`\`\`
-
----
 
 ## 📦 Installation & Setup
 
