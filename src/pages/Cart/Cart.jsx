@@ -5,11 +5,10 @@ import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { cart, removeFromCart } = useContext(CartContext);
-
   const navigate = useNavigate();
 
   const handleBuyNow = (item) => {
-    navigate("/payment");
+    navigate("/payment", { state: { product: item } });
   };
 
   return (
@@ -42,6 +41,7 @@ const Cart = () => {
                   >
                     Remove
                   </button>
+
                   <button
                     className="buy-btn"
                     onClick={() => handleBuyNow(item)}

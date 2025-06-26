@@ -9,7 +9,7 @@ export const ProductProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       if (categories.length === 0) {
-        const res = await fetch("https://dummyjson.com/products?limit=8");
+        const res = await fetch("https://dummyjson.com/products?limit=9");
         const data = await res.json();
         setProducts(data.products || []);
         return;
@@ -25,7 +25,7 @@ export const ProductProvider = ({ children }) => {
         })
       );
 
-      setProducts(allResults.flat()); 
+      setProducts(allResults.flat());
     };
 
     fetchData();

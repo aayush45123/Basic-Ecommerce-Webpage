@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useState } from "react";
 import { ProductsContext } from "../../context/ProductsContext";
 import Cards from "../../components/Cards/Cards";
 import "../Kids/Kids.css";
+import Title from "../../components/Title/Title";
 
 const Kids = () => {
   const { setCategories } = useContext(ProductsContext);
@@ -36,9 +37,10 @@ const Kids = () => {
         </div>
       </div>
 
-      <div className="section-title">
-        <h2>Kids' Products</h2>
-      </div>
+      <Title
+        title="Featured Kids Products"
+        subtitle="Discover our exclusive range of products"
+      />
       <Cards />
     </>
   );

@@ -1,241 +1,336 @@
+/* Men's Page CSS Design */
+
 .men-page {
- font-family: "Amazon Ember", Arial, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 }
 
 /* Hero Section */
 .men-hero {
- display: flex;
- align-items: center;
- min-height: 500px;
- background: linear-gradient(135deg, #232f3e 0%, #37475a 100%);
- padding: 60px 40px;
- color: white;
- position: relative;
- overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 60px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 60px;
+  position: relative;
+  overflow: hidden;
 }
 
 .men-hero::before {
- content: '';
- position: absolute;
- top: 0;
- left: 0;
- right: 0;
- bottom: 0;
- background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
- pointer-events: none;
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+  border-radius: 50%;
+  opacity: 0.05;
+  z-index: 0;
 }
 
 .men-hero-content {
- flex: 1;
- max-width: 500px;
- margin-right: 60px;
- position: relative;
- z-index: 2;
+  flex: 1;
+  z-index: 2;
+  position: relative;
 }
 
 .men-hero-content h1 {
- font-size: 3.2rem;
- font-weight: 700;
- margin-bottom: 20px;
- line-height: 1.2;
- color: #ffffff;
- text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: 64px;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #1e293b 0%, #3b82f6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 1s ease-out;
 }
 
 .men-hero-content p {
- font-size: 1.3rem;
- margin-bottom: 30px;
- color: #cccccc;
- line-height: 1.5;
+  font-size: 20px;
+  color: #64748b;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  font-weight: 400;
+  animation: fadeInUp 1s ease-out 0.2s both;
 }
 
 .shop-btn {
- background-color: #ff9900;
- color: #000000;
- border: none;
- padding: 14px 28px;
- font-size: 1.1rem;
- font-weight: 600;
- border-radius: 8px;
- cursor: pointer;
- transition: all 0.3s ease;
- box-shadow: 0 2px 8px rgba(255, 153, 0, 0.3);
- position: relative;
- overflow: hidden;
+  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 1s ease-out 0.4s both;
 }
 
 .shop-btn::before {
- content: '';
- position: absolute;
- top: 0;
- left: -100%;
- width: 100%;
- height: 100%;
- background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
- transition: left 0.5s;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
 }
 
 .shop-btn:hover::before {
- left: 100%;
+  left: 100%;
 }
 
 .shop-btn:hover {
- background-color: #e68900;
- transform: translateY(-2px);
- box-shadow: 0 4px 12px rgba(255, 153, 0, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4);
 }
 
+.shop-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Hero Image Section */
 .men-hero-image {
- flex: 1;
- display: flex;
- justify-content: center;
- align-items: center;
- position: relative;
- z-index: 2;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-image {
- max-width: 400px;
- width: 100%;
- height: auto;
- border-radius: 12px;
- box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
- transition: transform 0.3s ease;
- border: 2px solid rgba(255, 153, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  animation: fadeInRight 1s ease-out 0.6s both;
 }
 
 .hero-image:hover {
- transform: scale(1.05);
+  transform: scale(1.02) rotate(1deg);
 }
 
 /* Products Section */
 .men-products {
- padding: 50px 40px;
- background: linear-gradient(135deg, #f3f3f3 0%, #e8e8e8 100%);
- position: relative;
-}
-
-.men-products::before {
- content: '';
- position: absolute;
- top: 0;
- left: 0;
- right: 0;
- height: 3px;
- background: linear-gradient(90deg, #ff9900, #e68900, #ff9900);
- background-size: 200% 100%;
- animation: shine 3s linear infinite;
-}
-
-@keyframes shine {
- 0% { background-position: 0% 50%; }
- 100% { background-position: 200% 50%; }
+  padding: 100px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 30px 30px 0 0;
+  margin-top: -30px;
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
 }
 
 .men-products h2 {
- font-size: 2.2rem;
- color: #232f3e;
- margin-bottom: 40px;
- text-align: left;
- font-weight: 600;
- border-bottom: 3px solid #ff9900;
- padding-bottom: 10px;
- display: inline-block;
- position: relative;
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  color: #1e293b;
+  margin-bottom: 60px;
+  position: relative;
+  background: linear-gradient(135deg, #1e293b 0%, #3b82f6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .men-products h2::after {
- content: '';
- position: absolute;
- bottom: -6px;
- left: 0;
- width: 100%;
- height: 3px;
- background: linear-gradient(90deg, #ff9900, #e68900);
- border-radius: 2px;
- box-shadow: 0 2px 4px rgba(255, 153, 0, 0.3);
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+  border-radius: 2px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Responsive Design */
-@media (max-width: 968px) {
- .men-hero {
-   flex-direction: column;
-   text-align: center;
-   padding: 40px 30px;
- }
+@media (max-width: 1024px) {
+  .men-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 30px;
+    gap: 40px;
+  }
 
- .men-hero-content {
-   margin-right: 0;
-   margin-bottom: 40px;
- }
+  .men-hero-content h1 {
+    font-size: 48px;
+  }
 
- .men-hero-content h1 {
-   font-size: 2.5rem;
- }
+  .hero-image {
+    max-width: 400px;
+    height: 500px;
+  }
 
- .hero-image {
-   max-width: 300px;
- }
+  .men-products {
+    padding: 80px 30px;
+  }
+
+  .men-products h2 {
+    font-size: 36px;
+  }
 }
 
 @media (max-width: 768px) {
- .men-hero {
-   padding: 30px 20px;
- }
+  .men-hero {
+    padding: 30px 20px;
+    min-height: 70vh;
+  }
 
- .men-hero-content h1 {
-   font-size: 2rem;
- }
+  .men-hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
 
- .men-hero-content p {
-   font-size: 1.1rem;
- }
+  .men-hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
 
- .men-products {
-   padding: 30px 20px;
- }
+  .shop-btn {
+    padding: 15px 30px;
+    font-size: 16px;
+  }
 
- .men-products h2 {
-   font-size: 1.8rem;
- }
+  .hero-image {
+    max-width: 300px;
+    height: 400px;
+  }
+
+  .men-products {
+    padding: 60px 20px;
+  }
+
+  .men-products h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
 }
 
 @media (max-width: 480px) {
- .men-hero-content h1 {
-   font-size: 1.8rem;
- }
+  .men-hero-content h1 {
+    font-size: 28px;
+  }
 
- .shop-btn {
-   padding: 12px 24px;
-   font-size: 1rem;
- }
+  .men-hero-content p {
+    font-size: 16px;
+  }
 
- .hero-image {
-   max-width: 250px;
- }
+  .hero-image {
+    max-width: 250px;
+    height: 350px;
+  }
+
+  .men-products h2 {
+    font-size: 24px;
+  }
+
+  .shop-btn {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
 }
 
-/* Additional professional touches */
-.shop-btn:active {
- transform: translateY(0);
- box-shadow: 0 2px 4px rgba(255, 153, 0, 0.3);
+/* Additional Enhancement Effects */
+.men-hero-content h1:hover {
+  animation: textGlow 0.5s ease-in-out;
 }
 
-@keyframes fadeInUp {
- from {
-   opacity: 0;
-   transform: translateY(30px);
- }
- to {
-   opacity: 1;
-   transform: translateY(0);
- }
+@keyframes textGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  }
 }
 
-.men-hero-content {
- animation: fadeInUp 0.8s ease-out;
+/* Loading animation for hero image */
+.hero-image {
+  animation: imageLoad 1.5s ease-out;
 }
 
-.men-hero-image {
- animation: fadeInUp 0.8s ease-out 0.2s both;
+@keyframes imageLoad {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Subtle parallax effect */
+.men-hero::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #f0f9ff 0%, #dbeafe 100%);
+  border-radius: 50%;
+  opacity: 0.3;
+  z-index: 1;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
 }
