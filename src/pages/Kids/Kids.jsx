@@ -6,11 +6,12 @@ import Title from "../../components/Title/Title";
 
 const Kids = () => {
   const { setCategories } = useContext(ProductsContext);
-  const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
     setCategories(["tops", "sunglasses"]);
   }, [setCategories]);
+
+  const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
     fetch("https://dummyjson.com/products/28")

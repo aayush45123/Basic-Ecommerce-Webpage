@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { ProductsContext } from "../../context/ProductsContext";
-import Card from "../Card/Card"; // adjust path accordingly
+import Card from "../Card/Card";
 import "./Cards.css";
 
 const Cards = () => {
-  const { products } = useContext(ProductsContext);
+  const { filteredProducts } = useContext(ProductsContext);
 
   return (
     <div className="cards-container">
-      {products.map((product) => (
+      {filteredProducts.map((product) => (
         <Card key={product.id} product={product} />
       ))}
     </div>

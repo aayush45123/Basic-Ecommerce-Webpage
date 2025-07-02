@@ -143,6 +143,28 @@
   color: #4b5563;
 }
 
+.search-box {
+  margin-left: 1rem;
+}
+
+.search-box input {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.search-box input:focus {
+  border-color: #333;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 /* Mobile Menu */
 .mobile-menu {
   position: fixed;

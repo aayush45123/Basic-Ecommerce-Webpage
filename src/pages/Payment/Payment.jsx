@@ -5,7 +5,12 @@ import "./Payment.css";
 const Payment = () => {
   const navigate = useNavigate();
   const location = useLocation();
+
+  // Handle both single product and multiple products (checkout all)
   const product = location.state?.product;
+  const products = location.state?.products;
+  const isMultipleItems = products && products.length > 0;
+  const items = isMultipleItems ? products : product ? [product] : [];
 
   const [formData, setFormData] = useState({
     name: "",
@@ -61,13 +66,23 @@ const Payment = () => {
     }).format(price);
   };
 
-  // Calculate totals
-  const productPrice = product?.price || 0;
-  const shipping = 0; // Free shipping
-  const tax = Math.round(productPrice * 0.18); // 18% GST
-  const total = productPrice + shipping + tax;
+  // Calculate totals for all items
+  const calculateTotals = () => {
+    const subtotal = items.reduce((total, item) => {
+      const qty = item.qty || 1;
+      return total + item.price * qty;
+    }, 0);
 
-  if (!product) {
+    const shipping = 0; // Free shipping
+    const tax = Math.round(subtotal * 0.18); // 18% GST
+    const total = subtotal + shipping + tax;
+
+    return { subtotal, shipping, tax, total };
+  };
+
+  const { subtotal, shipping, tax, total } = calculateTotals();
+
+  if (items.length === 0) {
     return (
       <div className="payment-container">
         <h2>No Product Selected</h2>
@@ -81,11 +96,6 @@ const Payment = () => {
 
   return (
     <div className="payment-page">
-      <div className="payment-header">
-        <div className="logo">Ecommerce</div>
-        <div className="secure-checkout"> Secure Checkout</div>
-      </div>
-
       <div className="payment-content">
         <div className="payment-form">
           <h2>Payment & Delivery Details</h2>
@@ -143,10 +153,10 @@ const Payment = () => {
             <div className="upi-info">
               <p>Pay securely using UPI - India's fastest payment method</p>
               <div className="upi-logos">
-                <span> PhonePe</span>
-                <span> Google Pay</span>
-                <span>Paytm</span>
-                <span>BHIM</span>
+                <span>📱 PhonePe</span>
+                <span>💳 Google Pay</span>
+                <span>💰 Paytm</span>
+                <span>🏦 BHIM</span>
               </div>
             </div>
 
@@ -172,29 +182,49 @@ const Payment = () => {
             disabled={isProcessing}
           >
             {isProcessing
-              ? " Processing Payment..."
-              : `Pay ${formatPrice(total)} via UPI`}
+              ? "⏳ Processing Payment..."
+              : `💳 Pay ${formatPrice(total)} via UPI`}
           </button>
         </div>
 
         <div className="order-summary">
-          <h3>Order Summary</h3>
+          <h3>
+            Order Summary ({items.length} item{items.length > 1 ? "s" : ""})
+          </h3>
 
-          <div className="product-card">
-            <img src={product.thumbnail} alt={product.title} />
-            <div className="product-info">
-              <h4>{product.title}</h4>
-              <p className="brand">Brand: {product.brand}</p>
-              <p className="category">Category: {product.category}</p>
-              <p className="rating">⭐ {product.rating}</p>
-              <p className="price">{formatPrice(product.price)}</p>
-            </div>
+          <div className="products-list">
+            {items.map((item, index) => {
+              const qty = item.qty || 1;
+              const itemTotal = item.price * qty;
+
+              return (
+                <div key={item.id || index} className="product-card">
+                  <img src={item.thumbnail} alt={item.title} />
+                  <div className="product-info">
+                    <h4>{item.title}</h4>
+                    {item.brand && <p className="brand">Brand: {item.brand}</p>}
+                    <p className="category">Category: {item.category}</p>
+                    {item.rating && <p className="rating">⭐ {item.rating}</p>}
+                    <div className="quantity-price">
+                      <span className="quantity">Qty: {qty}</span>
+                      <p className="price">
+                        {formatPrice(item.price)} × {qty} ={" "}
+                        <strong>{formatPrice(itemTotal)}</strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
           <div className="price-breakdown">
             <div className="price-row">
-              <span>Item Price</span>
-              <span>{formatPrice(productPrice)}</span>
+              <span>
+                Subtotal (
+                {items.reduce((sum, item) => sum + (item.qty || 1), 0)} items)
+              </span>
+              <span>{formatPrice(subtotal)}</span>
             </div>
             <div className="price-row">
               <span>Shipping</span>
@@ -211,9 +241,9 @@ const Payment = () => {
           </div>
 
           <div className="security-info">
-            <p> Your payment information is secure</p>
-            <p> UPI payments are processed instantly</p>
-            <p> Free delivery within 2-3 days</p>
+            <p>🔐 Your payment information is secure</p>
+            <p>⚡ UPI payments are processed instantly</p>
+            <p>🚚 Free delivery within 2-3 days</p>
           </div>
         </div>
       </div>

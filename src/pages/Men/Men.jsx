@@ -5,14 +5,31 @@ import "../Men/Men.css";
 import Title from "../../components/Title/Title";
 
 const Men = () => {
-  const { setCategories } = useContext(ProductsContext);
+  const { products, filteredProducts, setFilteredProducts, setCategories } =
+    useContext(ProductsContext);
 
+  const [imageUrl, setImageUrl] = useState("");
+
+  // Set Men categories when component mounts
   useEffect(() => {
     setCategories(["mens-shirts", "mens-shoes", "mens-watches"]);
   }, [setCategories]);
 
-  const [imageUrl, setImageUrl] = useState("");
+  // Search event listener
+  useEffect(() => {
+    const handleSearch = (e) => {
+      const term = e.detail.toLowerCase();
+      const filtered = products.filter((product) =>
+        product.title.toLowerCase().includes(term)
+      );
+      setFilteredProducts(filtered);
+    };
 
+    window.addEventListener("search", handleSearch);
+    return () => window.removeEventListener("search", handleSearch);
+  }, [products]);
+
+  // Load a hero image dynamically
   useEffect(() => {
     fetch("https://dummyjson.com/products/83")
       .then((res) => res.json())
@@ -41,7 +58,7 @@ const Men = () => {
           title="Featured Men Products"
           subtitle="Discover our exclusive range of products"
         />
-        <Cards />
+        <Cards products={filteredProducts} />
       </section>
     </div>
   );

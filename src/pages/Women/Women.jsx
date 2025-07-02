@@ -1,12 +1,13 @@
 import React, { useEffect, useContext, useState } from "react";
 import { ProductsContext } from "../../context/ProductsContext";
 import Cards from "../../components/Cards/Cards";
-import "../Women/Women.css"; // Create this CSS file for styling
+import "../Women/Women.css";
 import Title from "../../components/Title/Title";
 
 const Women = () => {
   const { setCategories } = useContext(ProductsContext);
 
+  // Set categories on mount
   useEffect(() => {
     setCategories([
       "womens-dresses",
@@ -17,8 +18,8 @@ const Women = () => {
     ]);
   }, [setCategories]);
 
+  // Hero image
   const [imageUrl, setImageUrl] = useState("");
-
   useEffect(() => {
     fetch("https://dummyjson.com/products/177")
       .then((res) => res.json())
@@ -49,8 +50,9 @@ const Women = () => {
         <Title
           title="Featured Women Products"
           subtitle="Discover our exclusive range of products"
-        />{" "}
+        />
       </div>
+
       <Cards />
     </>
   );

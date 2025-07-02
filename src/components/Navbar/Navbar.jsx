@@ -4,6 +4,7 @@ import "./Navbar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 import { FaCartArrowDown } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa6";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -37,14 +38,30 @@ const Navbar = () => {
               <NavLink to="/kids">Kids</NavLink>
             </li>
             <li>
-              <NavLink to="/Cart">
-                <FaCartArrowDown />
+              <NavLink to="/wishlist">
+                <FaHeart title="Wishlist" />
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/cart">
+                <FaCartArrowDown title="Cart" />
               </NavLink>
             </li>
             <li>
               <NavLink to="/about">About Us</NavLink>
             </li>
           </ul>
+          <div className="search-box">
+            <input
+              type="text"
+              placeholder="Search products..."
+              onChange={(e) =>
+                window.dispatchEvent(
+                  new CustomEvent("search", { detail: e.target.value })
+                )
+              }
+            />
+          </div>
         </div>
 
         <div className="mobile-nav" onClick={() => setMenuOpen(true)}>
@@ -85,6 +102,11 @@ const Navbar = () => {
           <li>
             <NavLink to="/about" onClick={() => setMenuOpen(false)}>
               About Us
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/wishlist" onClick={() => setMenuOpen(false)}>
+              <FaHeart />
             </NavLink>
           </li>
         </ul>
